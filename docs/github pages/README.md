@@ -2,21 +2,26 @@
 
 TIL 작성할 때 vuepress로 많이 만들길래 따라해봄!
 
-설치
----
+## 설치
+
 1. github repository 생성 후 본인은 blog로 생성함.
 2. 로컬 환경에서 폴더 생성 후 해당 경로로 이동.
+
 ```sh
 $ mkdir blog
 $ cd blog
 $ git clone git@github.com:<USER_ID>/<REPO>.git .
 ```
+
 3. clone 받은 후 vuepress, npm 초기 설정 진행
+
 ```sh
 $ npm init
 $ npm install -D vuepress
 ```
+
 4. 루트 경로에 `package.json` 의 `script` 구문을 다음과 같이 수정
+
 ```json
   ...
   "scripts": {
@@ -25,15 +30,21 @@ $ npm install -D vuepress
   },
   ...
 ```
+
 5. 루트 경로에 `docs` 폴더 생성 후 `README.md` 생성 후 작성
+
 ```md
 # Hello World
 ```
+
 6. 아래 명령어 실행 후 작업된 내용을 확인해본다. `localhost:8080/blog/`
+
 ```sh
 $ npm run docs:dev
 ```
+
 7. 루트경로에 `deploy.sh` 생성 후 아래 내용 작성
+
 ```sh
 #!/usr/bin/env sh
 
@@ -66,24 +77,28 @@ git push -f git@github.com:<USER_ID>/<REPO>.git master:gh-pages
 
 cd -
 ```
-8. 빌드도 한번 돌려보자. 빌드가 성공하면 docs/ 경로에 `.vuepress` 폴더가 생성된다.  
+
+8. 빌드도 한번 돌려보자. 빌드가 성공하면 docs/ 경로에 `.vuepress` 폴더가 생성된다.
+
 ```sh
 $ npm run docs:build
-``` 
+```
+
 9. `.vuepress`경로에 `config.js` 파일 생성 후 다음과 같이 작성
+
 ```js
 module.exports = {
   title: "title",
   description: "desc",
   themeConfig: {
     nav: [{ text: "Github", link: "https://github.com/hhk2745" }],
-    sidebar: getSidebarArr()
+    sidebar: getSidebarArr(),
   },
   //가장 중요한 부분!
   //<username>.github.io 뒤에 주소가 붙으시면
   //아래와 같이 뒤 붙는 주소를 넣어주셔야합니다.
   //안그러면 css 가 반영이 안되요!! 꼭꼭 넣어주세요
-  base: "/blog/"
+  base: "/blog/",
 };
 
 function getSidebarArr() {
@@ -133,7 +148,7 @@ function makeSidebarObject(folder, mdfileList) {
   }
   return {
     title: title,
-    children: mdfileList
+    children: mdfileList,
   };
 }
 function aheadOfReadme(arr) {
@@ -145,11 +160,13 @@ function aheadOfReadme(arr) {
   return arr;
 }
 ```
+
 10. 프로젝트 루트경로에서 만들어진 스크립트를 실행해보자
+
 ```sh
 $ sh ./deploy.sh
 ```
-11. `https://github.com/<USER_ID>/<REPO>` Actions 탭에서 deploy 결과를 확인할 수 있다. (실시간 반영은 아니므로 5분 내로 확인 가능)
 
+11. `https://github.com/<USER_ID>/<REPO>` Actions 탭에서 deploy 결과를 확인할 수 있다. (실시간 반영은 아니므로 5분 내로 확인 가능)
 
 [참고사이트](https://kyounghwan01.github.io/blog/Vue/vuepress/vuepress-start/)

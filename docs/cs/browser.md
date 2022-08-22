@@ -8,7 +8,11 @@
 브라우저의 핵심 기능은 사용자가 참조하고자 하는 웹페이지를 서버에 요청(Request)하고 서버의 응답(Response)을 받아 브라우저에 표시하는 것이다.
 브라우저는 서버로부터 HTML, CSS, Javascript, 이미지 파일 등을 응답받는다. HTML, CSS 파일은 렌더링 엔진의 HTML 파서와 CSS 파서에 의해 파싱(Parsing)되어 DOM, CSSOM 트리로 변환되고 렌더 트리로 결합된다.
 이렇게 생성된 렌더 트리를 기반으로 브라우저는 웹페이지를 표시한다.
-![client-server](https://user-images.githubusercontent.com/18409941/185930522-d84783e5-d5d2-4437-9ed6-9ca8ff076fd7.png)*브라우저 동작 과정*
+<p align="center">
+![client-server](https://user-images.githubusercontent.com/18409941/185930522-d84783e5-d5d2-4437-9ed6-9ca8ff076fd7.png "브라우저 동작 과정")
+*브라우저 동작 과정*
+</p>
+
 
 자바스크립트는 렌더링 엔진이 아닌 자바스크립트 엔진이 처리한다. HTML 파서는 script 태그를 만나면 자바스크립트 코드를 실행하기 위해 DOM 생성 프로세스를 중지하고 자바스크립트 엔진으로 제어 권한을 넘긴다.
 제어 권한을 넘겨 받은 자바스크립트 엔진은 script 태그 내의 자바스크립트 코드 또는 script 태그의 src 어트리뷰트에 정의된
@@ -35,7 +39,11 @@ body 요소의 가장 아래에 자바스크립트를 위치시키는 것은 좋
 렌더링 엔진은 통신으로부터 요청한 문서의 내용을 얻는 것으로 시작하는데 문서의 내용은 보통 8KB 단위로 전송된다.
 
 다음은 렌더링 엔진의 기본적인 동작 과정이다.
-![rendering-engine](https://user-images.githubusercontent.com/18409941/185933734-514bc920-379c-456b-97c0-5c176f945df0.png)*렌더링 엔진의 동작 과정*
+<p align="center">
+![rendering-engine](https://user-images.githubusercontent.com/18409941/185933734-514bc920-379c-456b-97c0-5c176f945df0.png "렌더링 엔진의 동작 과정")
+*렌더링 엔진의 동작 과정*
+</p>
+
 
 렌더링 엔진은 HTML 문서를 파싱하고 `"콘텐츠 트리"`내부에서 태그를 DOM 노드로 변환한다. 그 다음 외부 CSS 파일과 함께 포함된 스타일 요소도 파싱한다.
 스타일 정보와 HTML 표시 규칙은 `"렌더 트리"`라고 부르는 또 다른 트리를 생성한다.

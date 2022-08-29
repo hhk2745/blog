@@ -1,4 +1,4 @@
-# Today I Learned
+# Today I Learned2
 
 https://hhk2745.github.io/blog/
 

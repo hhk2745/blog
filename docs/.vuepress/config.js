@@ -1,6 +1,6 @@
 module.exports = {
-  title: "그날의 기억",
-  description: "쭉가자",
+  title: "TIL",
+  description: "TIL",
   themeConfig: {
     nav: [{ text: "Github", link: "https://github.com/hhk2745" }],
     sidebar: getSidebarArr()

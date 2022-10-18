@@ -64,3 +64,14 @@ hamburger.addEventListener("click", () => {
 
 ![dream3](https://user-images.githubusercontent.com/18409941/196315992-1313b54b-b066-419e-94d0-b117c94d5123.png)
 _max-width: 768px active_
+
+## 코드리뷰
+
+1. 메뉴는 늘어날 수 있기 때문에 `flex: 1` 로고, 아이콘은 영역이 고정이므로 `flex: none`
+2. 아이콘의 경우 디자인이 특정 px로 시안이 나오므로 넓이값을 먼저 주고 `flex, align`등을 이용하여 정렬
+
+   ![css1](https://user-images.githubusercontent.com/18409941/196352182-b986d673-7f75-4f4c-858b-668680cd7e97.png)
+   _수정사항_
+
+   ![css2](https://user-images.githubusercontent.com/18409941/196352191-685d9c13-0be3-4a60-87b3-738b2a4f31fc.png)
+   _flex:none_

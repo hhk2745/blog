@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>호이스팅(hoisting) | TIL</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="TIL">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.616e89b1.css" as="style"><link rel="preload" href="/blog/assets/js/app.32802b13.js" as="script"><link rel="preload" href="/blog/assets/js/2.2defd20b.js" as="script"><link rel="preload" href="/blog/assets/js/11.4a4c6a21.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.62c17b49.js"><link rel="prefetch" href="/blog/assets/js/12.a08a9667.js"><link rel="prefetch" href="/blog/assets/js/13.42f6d94d.js"><link rel="prefetch" href="/blog/assets/js/14.a92ba7a6.js"><link rel="prefetch" href="/blog/assets/js/15.f432784d.js"><link rel="prefetch" href="/blog/assets/js/16.9dc9b492.js"><link rel="prefetch" href="/blog/assets/js/17.8fe8cd20.js"><link rel="prefetch" href="/blog/assets/js/18.a125b3a4.js"><link rel="prefetch" href="/blog/assets/js/19.cabbdbca.js"><link rel="prefetch" href="/blog/assets/js/3.9c2455d0.js"><link rel="prefetch" href="/blog/assets/js/4.26f73e91.js"><link rel="prefetch" href="/blog/assets/js/5.5dcec586.js"><link rel="prefetch" href="/blog/assets/js/6.f2a96706.js"><link rel="prefetch" href="/blog/assets/js/7.bdb84d19.js"><link rel="prefetch" href="/blog/assets/js/8.078460aa.js"><link rel="prefetch" href="/blog/assets/js/9.c6ea26cb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.616e89b1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">TIL</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/hhk2745" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/hhk2745" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HOME</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>cs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>css</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ETC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Image</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/JavaScript/closure.html" class="sidebar-link">클로저</a></li><li><a href="/blog/JavaScript/hoisting.html" aria-current="page" class="active sidebar-link">호이스팅(hoisting)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/JavaScript/hoisting.html#호이스팅-hoisting" class="sidebar-link">호이스팅(hoisting)</a></li><li class="sidebar-sub-header"><a href="/blog/JavaScript/hoisting.html#let과-const-호이스팅" class="sidebar-link">let과 const 호이스팅</a></li><li class="sidebar-sub-header"><a href="/blog/JavaScript/hoisting.html#let" class="sidebar-link">let</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="호이스팅-hoisting"><a href="#호이스팅-hoisting" class="header-anchor">#</a> 호이스팅(hoisting)</h2> <p>javascript에서 호이스팅(hoisting) 이란, 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미함.
+var로 선언한 변수의 경우 호이스팅 시 undefined로 변수를 초기화 함. 반면 let, const로 선언한 변수의 경우 호이스팅 시 변수를 초기화 하지 않음.</p> <p>호이스팅을 설명할 땐 주로 &quot;변수의 선언과 초기화를 분리한 후, 선언만 코드의 최상단으로 옮기는 것&quot;.
+따라서 변수를 정의하는 코드보다 사용하는 코드가 앞서 등장할 수 있음. 다만 선언과 초기화를 함께 수행하는 경우, 선언코드까지 실행해야 변수가 초기화된 상태가 됨을 주의.</p> <p>※ 호이스팅은(let, const 포함) ECMAScript 2015 언어 명세 이전의 표준 명세에는 나타나지 않음.
+당시에는 호이스팅이 Javascript에서 실행 맥락, 특히 생성 및 실행단계의 동작 방식을 설명하는 일반적인 방법이였음.</p> <h3 id="hoisting-대상"><a href="#hoisting-대상" class="header-anchor">#</a> hoisting 대상</h3> <p>Javascript는 함수의 코드를 실행하기 전에 함수 선언에 대한 메모리부터 할당함.
+덕분에 함수를 호출하는 코드를 함수 선언보다 앞서 배치할 수 있음.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">dogName</span><span class="token punctuation">(</span><span class="token string">&quot;왈프&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">dogName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;제 강아지 이름은 &quot;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&quot;입니다&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
+결과: &quot;제 강아지 이름은 왈프입니다&quot;
+*/</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 호이스팅한 var 선언으로 인해 undefined 출력</span>
+<span class="token keyword">var</span> num<span class="token punctuation">;</span> <span class="token comment">// 선언</span>
+num <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span> <span class="token comment">// 초기화</span>
+<span class="token comment">/*
+결과: 6
+*/</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ReferenceError</span>
+num2 <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span> <span class="token comment">// 초기화</span>
+<span class="token comment">/*
+결과: 6
+*/</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// y만 호이스팅 대상</span>
+
+x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// x 초기화. x를 선언하지 않은 경우 선언. 그러나 명령문에 var가 없으므로 호이스팅이 발생하지 않음</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// JavaScript는 선언만 호이스팅하므로, 윗줄의 y는 undefined</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// y를 선언하고 초기화</span>
+<span class="token comment">/*
+결과: 1 undefined
+*/</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 호이스팅은 없지만, 변수 초기화는 (아직 하지 않은 경우) 변수 선언까지 병행하므로 변수를 사용할 수 있음</span>
+a <span class="token operator">=</span> <span class="token string">&quot;크랜&quot;</span><span class="token punctuation">;</span> <span class="token comment">// a 초기화</span>
+b <span class="token operator">=</span> <span class="token string">&quot;베리&quot;</span><span class="token punctuation">;</span> <span class="token comment">// b 초기화</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token string">&quot;&quot;</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/*
+결과: 크랜베리
+*/</span>
+</code></pre></div><h2 id="let과-const-호이스팅"><a href="#let과-const-호이스팅" class="header-anchor">#</a> let과 const 호이스팅</h2> <p><code>let</code>과 <code>const</code>로 선언한 변수도 호이스팅 대상이지만, <code>var</code>와 달리 호이스팅 시 undefined로 변수를 초기화 하지는 않음.
+따라서 변수의 포기화를 수행하기 전에 읽는 코드가 먼저 나타나면 예외가 발생함</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// v is not defined</span>
+<span class="token keyword">let</span> v <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="let"><a href="#let" class="header-anchor">#</a> let</h2> <p><code>let</code> 명령문은 블록 스코프의 범위를 가지는 지역 변수를 선언하며, 선언과 동시에 임의의 값으로 초기화 할 수 있음.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// expected output: 2</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// expected output: 1</span>
+</code></pre></div><h3 id="스코프-규칙"><a href="#스코프-규칙" class="header-anchor">#</a> 스코프 규칙</h3> <p><code>let</code>으로 선언한 변수는 자신을 선언한 블록과 하위 블록을 스스로의 스코프로 가짐. 이런 점에서는 <code>let</code>, <code>var</code> 둘은 유사함.
+그러나 둘의 중요한 차이는 <code>var</code>의 경우 스코프가 '자신을 선언한 블록'이 아니라, 자신의 선언을 포함하는 함수라는 점..</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">varTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 같은 변수!</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">letTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 다른 변수</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>프로그램 최상위에서 사용할 경우 <code>var</code>는 전역 객체에 속성을 추가하지만 <code>let</code>은 추가하지 않음.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;global&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+</code></pre></div><h3 id="비공개-멤버"><a href="#비공개-멤버" class="header-anchor">#</a> 비공개 멤버</h3> <p>생성자와 <code>let</code>을 함께 사용하면 클로저를 사용하지 않아도 비공개 멤버를 나타낼 수 있음.</p> <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#%EB%B9%84%EA%B3%B5%EA%B0%9C_%EB%A9%A4%EB%B2%84_%EB%AA%A8%EC%82%AC" target="_blank" rel="noopener noreferrer">TODO<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/JavaScript/closure.html" class="prev">
+        클로저
+      </a></span> <span class="next"><a href="/blog/React/Next.js.html">
+        /React/Next.js.html
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.32802b13.js" defer></script><script src="/blog/assets/js/2.2defd20b.js" defer></script><script src="/blog/assets/js/11.4a4c6a21.js" defer></script>
+  </body>
+</html>
